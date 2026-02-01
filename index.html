@@ -3,137 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RJEČNIK USPRAVNOSTI – Kod za Navigaciju Kroz Digitalnu Maglu</title>
+    <title>Rječnik Uspravnosti - Resilience Code</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+            --card-bg: #161b22;
+        }
         body {
-            font-family: 'Georgia', serif;
-            background-color: #0a0a0a;
-            color: #e8e8e8;
-            line-height: 1.7;
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-            border-left: 1px solid #333;
-            border-right: 1px solid #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
         }
-        header { text-align: center; margin-bottom: 3rem; padding-bottom: 1.5rem; border-bottom: 1px solid #444; }
-        h1 { font-size: 2.8rem; margin-bottom: 0.5rem; letter-spacing: -0.5px; color: #fff; }
-        .podnaslov { font-size: 1.1rem; color: #aaa; font-style: italic; margin-top: 1rem; }
-        h2 { font-size: 1.8rem; margin-top: 3rem; margin-bottom: 1rem; color: #ccc; border-bottom: 1px solid #444; padding-bottom: 0.5rem; }
-        h3 { font-size: 1.4rem; margin-top: 2rem; color: #ddd; }
-        p { margin-bottom: 1.2rem; text-align: justify; }
-        strong { color: #fff; }
-        .poziv {
-            background-color: #1a1a1a;
-            border-left: 4px solid #666;
-            padding: 1.5rem;
-            margin: 2.5rem 0;
-            font-size: 1.05rem;
+        .container {
+            max-width: 900px;
+            margin: auto;
         }
-        .ton { 
-            margin-top: 4rem; 
-            padding-top: 2rem; 
-            border-top: 1px solid #444; 
-            font-style: italic; 
-            color: #999;
+        header {
             text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
-        a { color: #8ab4f8; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        footer { margin-top: 4rem; text-align: center; font-size: 0.9rem; color: #777; padding: 1.5rem; border-top: 1px solid #333; }
+        h1 { color: var(--accent-color); margin-bottom: 5px; }
+        h2 { color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 40px; }
+        .quote {
+            font-style: italic;
+            background: var(--card-bg);
+            padding: 20px;
+            border-left: 4px solid var(--accent-color);
+            margin: 20px 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+        .card strong {
+            color: var(--accent-color);
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #8b949e;
+        }
+        .tagline {
+            font-weight: bold;
+            color: #d2a8ff;
+        }
     </style>
 </head>
 <body>
+
+<div class="container">
     <header>
         <h1>RJEČNIK USPRAVNOSTI</h1>
-        <p class="podnaslov">Arhitektura duha. Kod za navigaciju kroz digitalnu maglu i povijesne vjetrometine.</p>
+        <p>Open-source kôd duhovne otpornosti i navigacija kroz digitalnu maglu.</p>
     </header>
 
-    <div class="poziv">
-        <p><strong>OVO JE OTVORENI KOD.</strong></p>
-        <p>Preuzmi ga. Prevedi ga. Prilagodi ga.</p>
-        <p>Forkaj na <a href="https://github.com/YOUR_USERNAME/resilience-code" target="_blank">GitHub-u</a>. Licenca: <a href="LICENSE.md" target="_blank">Creative Commons BY-SA 4.0</a>.</p>
+    <div class="quote">
+        "Ovo je otvoreni kôd uspravnosti. Preuzmi ga. Prevedi ga. Prilagodi ga."
     </div>
 
-    <h2 id="temeljni-pojmovi">I. TEMELJNI POJMOVI (Inženjerstvo karaktera i identiteta)</h2>
-
-    <h3>YANGANSTVO</h3>
-    <p><strong>YANGANSTVO:</strong> Karakteristika onoga koji, unatoč najtežim lancima, odbija status žrtve. Vještina pretvaranja vlastite intime u neosvojivu utvrdu slobode. To je snaga koja prisiljava moćne sustave da s tobom pregovaraju kao s jednakim.</p>
-
-    <h3>SOPILOST</h3>
-    <p><strong>SOPILOST:</strong> Osobina onoga koji, poput zvuka sopila, ostaje prodoran i autentičan bez obzira na stranu okolinu. Unutrašnja jeka zavičaja koju nosiš sa sobom; zadržavanje "oštrog" tona koji u disonanci sa svijetom stvara višu harmoniju.</p>
-
-    <h3>DIGITALNA KLESARIJA</h3>
-    <p><strong>DIGITALNA KLESARIJA:</strong> Vještina kojom se IT inženjering pretvara u alat za očuvanje slobode. Klesanje vlastite autonomije u nultama i jedinicama; građenje sustava koji su utvrde, ali ostavljaju prostor za ljudsko i neizvjesno (NULL).</p>
-
-    <h3>POZNAVANJE UDALJENOSTI</h3>
-    <p><strong>POZNAVANJE UDALJENOSTI:</strong> Unutrašnja spoznaja da se put do drugoga ne mjeri metrima, nego hrabrošću da se izađe iz vlastite izolacije i traume.</p>
-
-    <h3>PLES U OKLOPU</h3>
-    <p><strong>PLES U OKLOPU:</strong> Sposobnost zadržavanja duhovne lakoće i radosti unutar sustava dizajniranog za krizu. Korištenje oklopa kao zaštite, a ne dopuštanje da te on skameni.</p>
-
-    <h3>TERNARNA BUDNOST</h3>
-    <p><strong>TERNARNA BUDNOST:</strong> Odbijanje binarnog svijeta "ili-ili" (naši-vaši). Prihvaćanje trećeg stanja u kojem su sve mogućnosti otvorene dok se ne donese vlastiti, suvereni sud.</p>
-
-    <h2 id="strategija-i-geopolitika">II. STRATEGIJA I GEOPOLITIKA (Modo Croatico i Vertikala)</h2>
-
-    <h3>MODO CROATICO (Hrvatski način)</h3>
-    <p><strong>MODO CROATICO (Hrvatski način):</strong> Vještina opstanka u kojoj se nedostatak resursa nadoknađuje kreativnošću i lukavošću. Pobjeda sirove inteligencije nad tromim sustavima.</p>
-
-    <h3>BEREZINSKA SMIRAJNOST</h3>
-    <p><strong>BEREZINSKA SMIRAJNOST:</strong> Unutrašnji mir usred potpunog kaosa i opće propasti. Odbijanje sudjelovanja u kolektivnoj panici; mirno "pečenje krumpira" dok se carstva raspadaju.</p>
-
-    <h3>KRAVATNOST</h3>
-    <p><strong>KRAVATNOST:</strong> Transformacija surove ratničke snage u vrhunsku eleganciju. Trenutak kad tvoj identitet prestaje biti povod za strah i postaje svjetska mjera stila i dostojanstva.</p>
-
-    <h3>EUROPSKA VERTIKALA</h3>
-    <p><strong>EUROPSKA VERTIKALA:</strong> Kulturni pol utemeljen na kršćanstvu i suverenosti naroda. Otpor pretvaranju Europe u bezličnu masu ili koloniju; snaga koja proizlazi iz različitosti uspravnih naroda.</p>
-
-    <h3>SHAMBHALA GRANIČAR</h3>
-    <p><strong>SHAMBHALA GRANIČAR:</strong> Spoj drevne mudrosti o suosjećanju i praktičnog preživljavanja na vjetrometini. Onaj koji se pojavljuje na pravom mjestu da bi nevidljivo demontirao sustave uništenja iznutra.</p>
-
-    <h2 id="drustvena-dijagnostika">III. DRUŠTVENA DIJAGNOSTIKA I ORUŽJA DIVERZIJE</h2>
-
-    <h3>OSMIJEH (Ilegalno oružje diverzije)</h3>
-    <p><strong>OSMIJEH (Ilegalno oružje diverzije):</strong> Čin otpora kojim se odbija priznavanje autoriteta sustava nad vlastitim unutrašnjim stanjem, posebno tamo gdje su pravila postavljena protiv pojedinca ("gdje se smijati ne smije").</p>
-
-    <h3>ARŠINARENJE</h3>
-    <p><strong>ARŠINARENJE:</strong> Politička i medijska manipulacija kojom se isti postupci mjere različitim mjerilima ovisno o ideologiji. Biti uspravan znači odbiti sudjelovati u tom bludu.</p>
-
-    <h3>ARHEOLOGIJA ŠUTNJE</h3>
-    <p><strong>ARHEOLOGIJA ŠUTNJE:</strong> Dešifriranje neizgovorenih poruka predaka kroz digitalnu maglu. Procesuiranje bakine šutnje dok ne postane kôd za budućnost.</p>
-
-    <h3>BRISALSTVO</h3>
-    <p><strong>BRISALSTVO:</strong> Sustavno potiskivanje ili brisanje identitetskih odrednica.</p>
-
-    <h3>MUTAVOST (Hrvatska)</h3>
-    <p><strong>MUTAVOST (Hrvatska):</strong> Specifična nemogućnost artikulacije vlastitih interesa u ključnim povijesnim trenucima.</p>
-
-    <h3>TESTRANJE i ČEŠNJARENJE</h3>
-    <p><strong>TESTRANJE i ČEŠNJARENJE:</strong> Oblici društvenog pritiska i sitnih podmetanja kojima se iskušava tuđa uspravnost.</p>
-
-    <h2 id="vrhunska-disciplina">IV. VRHUNSKA DISCIPLINA DUHA</h2>
-
-    <h3>TAMBURANJE DUHA</h3>
-    <p><strong>TAMBURANJE DUHA:</strong> Sposobnost stvaranja orkestralne sile iz jednostavnih materijala kroz uporno klesanje; spoj vrhunske discipline i neukrotivog duha.</p>
-
-    <h3>SREBRNA ŽICA OTPORA</h3>
-    <p><strong>SREBRNA ŽICA OTPORA:</strong> Oštri ton koji dokazuje jednakost tamo gdje nas se ne očekuje i ne dopušta da budemo mjereni kao manje vrijedni.</p>
-
-    <h3>RAVNIČARSKI OKOMIT</h3>
-    <p><strong>RAVNIČARSKI OKOMIT:</strong> Stanje u kojem, unatoč polazištu iz male ili ravne sredine, ambicija i doseg idu vertikalno prema gore, do najviših dvorova svijeta.</p>
-
-    <h3>ČIPKARSTVO DUHA / ARHITEKTURA ČIPKE</h3>
-    <p><strong>ČIPKARSTVO DUHA / ARHITEKTURA ČIPKE:</strong> Vještina investiranja vremena u unutrašnju disciplinu i njezino prenošenje u vanjski prostor.</p>
-
-    <div class="ton">
-        <p>"Tutnji pomutnja u mojoj slutnji, da sam napravio korak više nego što sam trebao, i ušao kroz vrata gdje se smijati ne smije."</p>
+    <h2>I. TEMELJNI KOD</h2>
+    <div class="grid">
+        <div class="card"><strong>MODO HUMANICO</strong>Najviša razina Modo Croatico načina života; svjesni odabir svladavanja sebe i služenja drugima.</div>
+        <div class="card"><strong>GRANIČAR</strong>Slobodni ratnik-domaćin, čuvar "Bijelog horizonta". Čovjek koji je umjesto kmetstva izabrao vječnu stražu.</div>
+        <div class="card"><strong>OTETO PAMĆENJE</strong>Svijest o braći koju je sudbina odvela na drugu stranu; pamćenje rane bez trovanja mržnjom.</div>
+        <div class="card"><strong>GRANIČARSKA SLOBODA</strong>Beskompromisno pravo na vlastiti put, izboreno hrabrošću koja ne čeka zoru.</div>
     </div>
 
-    <footer>
-        <p>© 2026 Zoran Rajković. Ovo je kulturno oružje i otvoreni kod. Dizajnirano za opstanak.</p>
-        <p>Adresa: <a href="https://github.com/zoranrajkovic/resilience-code">https://github.com/zoranrajkovic/resilience-code</a></p>
-    </footer>
+    <h2>II. VRHUNSKA DISCIPLINA DUHA</h2>
+    <p class="tagline">Spoj vrhunske discipline i neukrotivog duha.</p>
+    <div class="grid">
+        <div class="card"><strong>TAMBURANJE DUHA</strong>Stvaranje orkestralne sile iz jednostavnog materijala kroz uporno klesanje.</div>
+        <div class="card"><strong>SREBRNA ŽICA OTPORA</strong>Oštri ton koji dokazuje jednakost tamo gdje se ona ne očekuje.</div>
+        <div class="card"><strong>RAVNIČARSKI OKOMIT</strong>Doseg i ambicija koji idu vertikalno prema najvišim dvoranama svijeta unatoč porijeklu.</div>
+        <div class="card"><strong>ČIPKARSTVO DUHA</strong>Vještina u koju se vrijeme investira, a ne troši.</div>
+    </div>
+
+    <h2>III. STRATEGIJA I DIVERZIJA</h2>
+    <div class="grid">
+        <div class="card"><strong>MODO CROATICO</strong>Jedinstveni hrvatski način opstanka; pobjeda kreativnosti nad sirovom silom.</div>
+        <div class="card"><strong>OSMIJEH</strong>Ilegalno oružje diverzije. Odbijanje priznavanja autoriteta sustava nad unutrašnjim stanjem.</div>
+        <div class="card"><strong>YANGANSTVO</strong>Odbijanje statusa žrtve; pretvaranje intime u neosvojivu tvrđavu slobode.</div>
+        <div class="card"><strong>SOPILOST</strong>Osobina onoga koji ostaje prodoran i autentičan bez obzira na okolinu.</div>
+    </div>
+
+    <h2>IV. ARHITEKTURA OTPORA</h2>
+    <div class="grid">
+        <div class="card"><strong>GVOZDANSKI MIR</strong>Unutrašnja nepokolebljivost i vjernost sebi kao vrhunska pobjeda.</div>
+        <div class="card"><strong>ZAGLAVNI KAMEN</strong>Temeljna vrijednost koja drži cijelu strukturu zajednice.</div>
+        <div class="card"><strong>GRANIČARSKA TEOLOGIJA</strong>Prepoznavanje svetog u otporu protiv onoga što nas želi poništiti.</div>
+        <div class="card"><strong>MODERNA GRANICA</strong>Digitalni i duhovni prostor u kojem odbijaš postati broj.</div>
+    </div>
+
+    <div class="quote" style="text-align: center;">
+        <strong>TEMELJNI STIH:</strong><br>
+        "Tutnji pomutnja u mojoj slutnji, da sam napravio korak više nego što sam trebao, i ušao kroz vrata gdje se smijati ne smije."
+    </div>
+
+    <div class="footer">
+        <p>Operacija "Kod Uspravnosti" je u tijeku. | Licenca: CC BY-SA 4.0</p>
+    </div>
+</div>
+
 </body>
 </html>
