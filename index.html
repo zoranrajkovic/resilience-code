@@ -11,67 +11,90 @@
             --accent-color: #58a6ff;
             --border-color: #30363d;
             --card-bg: #161b22;
+            --detail-text: #8b949e;
+            --highlight: #f0883e;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
             padding: 20px;
         }
-        .container {
-            max-width: 900px;
-            margin: auto;
-        }
+        .container { max-width: 1000px; margin: auto; }
         header {
             text-align: center;
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
         }
-        h1 { color: var(--accent-color); margin-bottom: 5px; }
-        h2 { color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 40px; }
+        h1 { color: var(--accent-color); font-size: 2.5em; margin-bottom: 10px; }
+        h2 { color: var(--accent-color); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 50px; }
+        
         .quote {
             font-style: italic;
             background: var(--card-bg);
             padding: 20px;
             border-left: 4px solid var(--accent-color);
-            margin: 20px 0;
+            margin: 25px 0;
+            text-align: center;
         }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
+
+        /* Interaktivne kartice */
         .card {
             background: var(--card-bg);
-            padding: 20px;
+            padding: 25px;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            transition: transform 0.2s;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         .card:hover {
-            transform: translateY(-5px);
             border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .card.active {
+            border-color: var(--highlight);
+            background: #1c2128;
         }
         .card strong {
             color: var(--accent-color);
-            display: block;
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 10px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #8b949e;
+        .card .short-desc {
+            font-weight: 500;
         }
-        .tagline {
-            font-weight: bold;
-            color: #d2a8ff;
+        .details {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
+            color: var(--detail-text);
+            font-size: 0.95em;
+            animation: slideDown 0.4s ease forwards;
         }
+        .card.active .details { display: block; }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tagline { font-weight: bold; color: #d2a8ff; margin-bottom: 15px; display: block; }
+        .footer { text-align: center; margin-top: 60px; padding: 20px; color: #8b949e; font-size: 0.9em; border-top: 1px solid var(--border-color); }
     </style>
 </head>
 <body>
@@ -79,55 +102,106 @@
 <div class="container">
     <header>
         <h1>RJEČNIK USPRAVNOSTI</h1>
-        <p>Open-source kôd duhovne otpornosti i navigacija kroz digitalnu maglu.</p>
+        <p>Open-source kôd duhovne otpornosti | Navigacija kroz digitalnu maglu</p>
     </header>
 
     <div class="quote">
         "Ovo je otvoreni kôd uspravnosti. Preuzmi ga. Prevedi ga. Prilagodi ga."
     </div>
 
-    <h2>I. TEMELJNI KOD</h2>
+    <h2>I. TEMELJNI KOD I FILOZOFIJA PUTU</h2>
     <div class="grid">
-        <div class="card"><strong>MODO HUMANICO</strong>Najviša razina Modo Croatico načina života; svjesni odabir svladavanja sebe i služenja drugima.</div>
-        <div class="card"><strong>GRANIČAR</strong>Slobodni ratnik-domaćin, čuvar "Bijelog horizonta". Čovjek koji je umjesto kmetstva izabrao vječnu stražu.</div>
-        <div class="card"><strong>OTETO PAMĆENJE</strong>Svijest o braći koju je sudbina odvela na drugu stranu; pamćenje rane bez trovanja mržnjom.</div>
-        <div class="card"><strong>GRANIČARSKA SLOBODA</strong>Beskompromisno pravo na vlastiti put, izboreno hrabrošću koja ne čeka zoru.</div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>MODO HUMANICO</strong>
+            <span class="short-desc">Najviša razina Modo Croatico načina života.</span>
+            <div class="details">Spoznaja da je uspravnost veća od pojedinca. Svjesni odabir svladavanja sebe i služenja drugima, gdje muka rađa čistu ljudskost umjesto mržnje.</div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>GRANIČAR</strong>
+            <span class="short-desc">Slobodni ratnik-domaćin, čuvar "Bijelog horizonta".</span>
+            <div class="details">Čovjek koji je izabrao vječnu stražu umjesto kmetstva, plaćajući slobodu "porezom u krvi". Simbol nepokorene kičme.</div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>OTETO PAMĆENJE</strong>
+            <span class="short-desc">Svijest o braći koju je sudbina odvela na drugu stranu.</span>
+            <div class="details">Sposobnost pamćenja rane bez trovanja vlastitog bića mržnjom. Prepoznavanje brata pod tuđim barjakom uz čuvanje svog korijena.</div>
+        </div>
     </div>
 
     <h2>II. VRHUNSKA DISCIPLINA DUHA</h2>
-    <p class="tagline">Spoj vrhunske discipline i neukrotivog duha.</p>
+    <span class="tagline">Spoj vrhunske discipline i neukrotivog duha.</span>
     <div class="grid">
-        <div class="card"><strong>TAMBURANJE DUHA</strong>Stvaranje orkestralne sile iz jednostavnog materijala kroz uporno klesanje.</div>
-        <div class="card"><strong>SREBRNA ŽICA OTPORA</strong>Oštri ton koji dokazuje jednakost tamo gdje se ona ne očekuje.</div>
-        <div class="card"><strong>RAVNIČARSKI OKOMIT</strong>Doseg i ambicija koji idu vertikalno prema najvišim dvoranama svijeta unatoč porijeklu.</div>
-        <div class="card"><strong>ČIPKARSTVO DUHA</strong>Vještina u koju se vrijeme investira, a ne troši.</div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>TAMBURANJE DUHA</strong>
+            <span class="short-desc">Stvaranje orkestralne sile kroz uporno klesanje.</span>
+            <div class="details">Sposobnost da se iz običnog čovjeka ili jednostavnog drva izvuče snaga koja parira svijetu. Zahtijeva spoj discipline i divljeg duha.</div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>SREBRNA ŽICA OTPORA</strong>
+            <span class="short-desc">Oštri ton koji dokazuje jednakost tamo gdje se ne očekuje.</span>
+            <div class="details">Ne dopušta da budemo mjereni kao manje vrijedni. To je vrhunska disciplina koja kroz oštrinu tona čuva dostojanstvo.</div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>RAVNIČARSKI OKOMIT</strong>
+            <span class="short-desc">Vertikalna ambicija unatoč horizontalnom polazištu.</span>
+            <div class="details">Iako ponikao u ravnici ili maloj sredini, tvoj doseg ide prema najvišim dvoranama svijeta. Spoj discipline i neukrotivosti.</div>
+        </div>
     </div>
 
     <h2>III. STRATEGIJA I DIVERZIJA</h2>
     <div class="grid">
-        <div class="card"><strong>MODO CROATICO</strong>Jedinstveni hrvatski način opstanka; pobjeda kreativnosti nad sirovom silom.</div>
-        <div class="card"><strong>OSMIJEH</strong>Ilegalno oružje diverzije. Odbijanje priznavanja autoriteta sustava nad unutrašnjim stanjem.</div>
-        <div class="card"><strong>YANGANSTVO</strong>Odbijanje statusa žrtve; pretvaranje intime u neosvojivu tvrđavu slobode.</div>
-        <div class="card"><strong>SOPILOST</strong>Osobina onoga koji ostaje prodoran i autentičan bez obzira na okolinu.</div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>MODO CROATICO</strong>
+            <span class="short-desc">Vještina opstanka kreativnošću i lukavošću.</span>
+            <div class="details">Nadoknađivanje manjka resursa sirovom inteligencijom. Transformacija ratničke elite u svjetski simbol elegancije i stila.</div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>OSMIJEH</strong>
+            <span class="short-desc">Ilegalno oružje diverzije.</span>
+            <div class="details">Čin otpora kojim se odbija priznati autoritet sustava nad vlastitim unutrašnjim stanjem, posebno tamo gdje je zabranjen.</div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>YANGANSTVO</strong>
+            <span class="short-desc">Odbijanje statusa žrtve u najtežim lancima.</span>
+            <div class="details">Vještina pretvaranja intime u neosvojivu tvrđavu slobode. Snaga koja prisiljava moćne da pregovaraju s tobom kao s jednakim.</div>
+        </div>
     </div>
 
     <h2>IV. ARHITEKTURA OTPORA</h2>
     <div class="grid">
-        <div class="card"><strong>GVOZDANSKI MIR</strong>Unutrašnja nepokolebljivost i vjernost sebi kao vrhunska pobjeda.</div>
-        <div class="card"><strong>ZAGLAVNI KAMEN</strong>Temeljna vrijednost koja drži cijelu strukturu zajednice.</div>
-        <div class="card"><strong>GRANIČARSKA TEOLOGIJA</strong>Prepoznavanje svetog u otporu protiv onoga što nas želi poništiti.</div>
-        <div class="card"><strong>MODERNA GRANICA</strong>Digitalni i duhovni prostor u kojem odbijaš postati broj.</div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>GVOZDANSKI MIR</strong>
+            <span class="short-desc">Nepokolebljivost kad je ishod naizgled određen.</span>
+            <div class="details">Mir onoga tko zna da je ostati vjeran sebi vrhunska pobjeda, bez obzira na materijalni gubitak.</div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>GRANIČARSKA TEOLOGIJA</strong>
+            <span class="short-desc">Duhovna disciplina opstanka na vjetrometini.</span>
+            <div class="details">Prepoznavanje svetog u aktivnom otporu protiv poništenja. Vjera koja se brusi na granici svjetova.</div>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+            <strong>DIGITALNA KLESARIJA</strong>
+            <span class="short-desc">IT inženjering kao alat za očuvanje slobode.</span>
+            <div class="details">Trajno bilježenje bitnih misli u nultama i jedinicama; klesanje autonomije u digitalnoj magli.</div>
+        </div>
     </div>
 
-    <div class="quote" style="text-align: center;">
+    <div class="quote" style="margin-top: 50px;">
         <strong>TEMELJNI STIH:</strong><br>
         "Tutnji pomutnja u mojoj slutnji, da sam napravio korak više nego što sam trebao, i ušao kroz vrata gdje se smijati ne smije."
     </div>
 
     <div class="footer">
         <p>Operacija "Kod Uspravnosti" je u tijeku. | Licenca: CC BY-SA 4.0</p>
+        <p style="font-size: 0.8em; margin-top: 10px;">Klikni na bilo koju karticu za dublje značenje.</p>
     </div>
 </div>
+
+<script>
+    function toggleCard(card) {
+        card.classList.toggle('active');
+    }
+</script>
 
 </body>
 </html>
